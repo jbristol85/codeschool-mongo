@@ -1,0 +1,19 @@
+{
+  "name": "codeschool-mongo",
+  "version": "1.0.0",
+  "description": "Classwork for CareerDevs",
+  "main": "mongo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbristol85/codeschool-mongo.git"
+  },
+  "author": "Josh Bristol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbristol85/codeschool-mongo/issues"
+  },
+  "homepage": "https://github.com/jbristol85/codeschool-mongo#readme"
+}
