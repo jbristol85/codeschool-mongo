@@ -32,11 +32,32 @@ function monsters(name, health, lastFought, attacks, stats, db){
 		"attacks":["bite", "squeeze", "swallow"],
 		"stats":{
 			"attack": 10,
-			"defence"; 7
+			"defence": 7
 		}
 	})
 	
 	console.log(db.monsters.find());  // finds all monsters in the db.
 	db.monsters.find({"name":"Tiger"})  // returns a monster named Tiger
-	db.monsters.find({"attacks":"bite"}, {"multi": True})  // returns all monsters with an attack of bite
+	db.monsters.find({"attacks":"bite"}, {"multi": true})  // returns all monsters with an attack of bite
 	db.monsters.find({"stats.defence": 7})  //  finds all monsters with a defence of 7
+	
+	// ------ Level 3
+	
+	var mongo = function(db){
+		db.monsters.find({"stats.attack":{"$lt":10}},{"multi":true}) //find all monsters with attack less then 10
+		db.monsters.find({"levels":{"$gte": 5, "$lte": 10}}, {"multi":true})  // find all monsters with level greater than or equal to 5 and less then or equal to  10
+		db.monsters.find({"attacks":{"$ne":"bite"}},{"multi":true}) // find monsters without an attack "bite"
+		db.monsters.find({"level":{"lt":6}},{"name": true, "level": true, "health": true, "_id": false}) //find monsters with levels less than 6, returning only name, level, and health
+		db.monsters.find({"stats.attack":{"$gt":10, "$lt":20}}, {"health": false, "style":false}, {"multi":true})// find all monsters who attack is between 10 and 20 but do not include the monsters health or style
+		db.monsters.find().count() //counts the number of documents in the collection
+		db.monsters.find().sort({"level":-1})  // will sort the collection by level highest at the top.
+		
+	};
+	
+	
+	
+	
+	
+Write the command to find all monsters who attack is between 10 and 20 but do not include the monsters health or style
+Write the command to find out how many monsters are in the collection.
+Write the command to sort the collection by the monsters level with the highest level at the top and the lowest at the bottom
