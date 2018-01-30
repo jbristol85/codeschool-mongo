@@ -5,7 +5,7 @@ use myGame
 db.monsters.insert({
 	"name": "Tiger",
 	"health": 8,
-	"lastFought": "January 12, 2017",
+	"lastFought": new Date(2016, 9, 1),
 	"attacks": ["bite", "claw", "roar"],
 	"stats": {
 		"attack": 7,
@@ -16,7 +16,7 @@ db.monsters.insert({
 db.monsters.insert({ 
 	"name": "crocodile",
 	"health": 9,
-	"lastFought": "November 15, 2017",
+	"lastFought": new Date(2015, 2, 24),
 	"attacks": ["bite", "death roll", "tail whip"],
 	"stats": {
 		"attack": 8,
@@ -28,7 +28,7 @@ function monsters(name, health, lastFought, attacks, stats, db){
 	db.monsters.insert({
 		"name": "Snake",
 		"health": "excellent",
-		"lastFought": "January 2, 2018",
+		"lastFought": new Date(2017, 5, 20),
 		"attacks":["bite", "squeeze", "swallow"],
 		"stats":{
 			"attack": 10,
@@ -54,10 +54,3 @@ function monsters(name, health, lastFought, attacks, stats, db){
 		
 	};
 	
-	
-	
-	
-	
-Write the command to find all monsters who attack is between 10 and 20 but do not include the monsters health or style
-Write the command to find out how many monsters are in the collection.
-Write the command to sort the collection by the monsters level with the highest level at the top and the lowest at the bottom
